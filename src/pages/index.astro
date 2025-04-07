@@ -1,0 +1,39 @@
+---
+import '../styles/global.css';
+import { Header } from '../components/layouts/header';
+import { Footer } from '../components/layouts/footer';
+import { HeroSection } from '../components/sections/hero-section';
+import { AboutSection } from '../components/sections/about-section';
+import { SkillsSection } from '../components/sections/skills-section';
+import { ExperienceSection } from '../components/sections/experience-section';
+import { ProjectsSection } from '../components/sections/projects-section';
+import { EducationSection } from '../components/sections/education-section';
+import { ContactSection } from '../components/sections/contact-section';
+
+// Full Astro Component Syntax:
+// https://docs.astro.build/basics/astro-components/
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Portfolio - Le Duy Linh</title>
+  </head>
+
+  <body class="bg-white dark:bg-neutral-900 text-black dark:text-white">
+    <Header client:load />
+    <main>
+      <HeroSection client:visible />
+      <AboutSection client:visible />
+      <SkillsSection client:visible />
+      <ExperienceSection client:visible />
+      <ProjectsSection client:visible />
+      <EducationSection client:visible />
+      <ContactSection client:visible />
+    </main>
+    <Footer client:load />
+  </body>
+</html>
