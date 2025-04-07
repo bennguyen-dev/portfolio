@@ -1,20 +1,20 @@
 'use client';
 
 import {
+  MobileNav,
+  MobileNavHeader,
+  MobileNavMenu,
+  MobileNavToggle,
   Navbar,
+  NavbarLogo,
   NavBody,
   NavItems,
-  MobileNav,
-  NavbarLogo,
-  NavbarButton,
-  MobileNavHeader,
-  MobileNavToggle,
-  MobileNavMenu,
 } from '@/components/ui/resizable-navbar';
-import { useState, useEffect } from 'react';
-import { Sun, Moon, Monitor, Download } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { Download, Monitor, Moon, Sun } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { NAV_ITEMS } from '@/constants';
+import { ShimmerButton } from '@/components/ui/shimmer-button.tsx';
 
 type Theme = 'light' | 'dark' | 'system';
 
@@ -102,15 +102,14 @@ export function Header() {
         />
         <div className="flex items-center gap-4">
           <ThemeToggle />
-          <NavbarButton
-            href="/path-to-your-cv.pdf"
-            variant="primary"
-            className="flex items-center gap-2"
-            download
+          <ShimmerButton
+            onClick={() => {
+              window.open('/path-to-your-cv.pdf', '_blank');
+            }}
           >
-            <Download className="w-4 h-4" />
-            Download CV
-          </NavbarButton>
+            <Download className="w-4 h-4 mr-2" />
+            Resume
+          </ShimmerButton>
         </div>
       </NavBody>
 
@@ -146,16 +145,14 @@ export function Header() {
             </a>
           ))}
           <div className="flex w-full flex-col gap-4 mt-4">
-            <NavbarButton
-              href="/path-to-your-cv.pdf"
-              variant="primary"
-              className="w-full flex items-center justify-center gap-2"
-              download
-              onClick={() => setIsMobileMenuOpen(false)}
+            <ShimmerButton
+              onClick={() => {
+                window.open('/path-to-your-cv.pdf', '_blank');
+              }}
             >
-              <Download className="w-4 h-4" />
-              Download CV
-            </NavbarButton>
+              <Download className="w-4 h-4 mr-2" />
+              Resume
+            </ShimmerButton>
           </div>
         </MobileNavMenu>
       </MobileNav>
