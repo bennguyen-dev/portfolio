@@ -1,437 +1,621 @@
 import type { CVData } from '@/type';
 
 export const CV: CVData = {
-  personal_details: {
-    name: 'LE DUY LINH',
-    contact: {
-      email: 'leduylinh1998.nc@gmail.com',
-      phone: '0342 90 96 96',
-      linkedin: 'Not specified',
-      other: 'VietNam',
-    },
+  "personal_details": {
+    "name": "LE DUY LINH",
+    "contact": {
+      "email": "bennguyen.dev.vn@gmail.com",
+      "phone": "0342 90 96 96",
+      "linkedin": "www.linkedin.com/in/bennguyen-dev",
+      "other": "github.com/bennguyen-dev",
+      "location": "Hanoi, VietNam"
+    }
   },
-  summary_objective:
-    "I'm Le Duy Linh, a Front-end Developer with four years of experience. My goal is to become an expert and contribute to large-scale systems, serving diverse user bases. I'm passionate about creating engaging web experiences and continuously learning new technologies. I thrive on challenges and am dedicated to delivering high-quality solutions that exceed user expectations.",
-  education: [
+  "summary_objective": "Frontend Developer with 5+ years of building high-performance, scalable web applications using the ReactJS ecosystem. Experienced in optimizing performance, tackling complex UI challenges, and enhancing user experience (UI/UX). Seeking innovative projects focused on performance, UI/UX, and exploring Al applications.",
+  "education": [
     {
-      degree: 'Professional Developer of Open Source PHP',
-      institution: 'BACHKHOA APTECH',
-      start_date: '2019-12',
-      end_date: '2020-04',
-      field: 'Application Programming',
-      grades: 'Not specified',
+      "degree": "Bachelor of Engineering",
+      "institution": "HANOI UNIVERSITY OF SCIENCE AND TECHNOLOGY",
+      "start_date": "2016-12",
+      "end_date": "2021-04",
+      "field": "Electrical Engineering",
+      "grades": "Not specified",
+      "location": "HANOI, VIETNAM"
     },
     {
-      degree: 'Electrical Engineer',
-      institution: 'HANOI UNIVERSITY OF SCIENCE AND TECHNOLOGY',
-      start_date: '2016-12',
-      end_date: '2021-04',
-      field: 'Electrical Engineer',
-      grades: 'Not specified',
-    },
+      "degree": "Professional Developer of Open Source PHP",
+      "institution": "BACHKHOA-APTECH",
+      "start_date": "2019-12",
+      "end_date": "2020-04",
+      "field": "Application Programming Focus",
+      "grades": "Not specified",
+      "location": "HANOI, VIETNAM"
+    }
   ],
-  experience: [
+  "experience": [
     {
-      company: 'Your.rentals',
-      position: 'FRONT END DEVELOPER',
-      start_date: '2023-05',
-      end_date: 'Present',
-      duration_months: 12,
-      responsibilities:
-        'Investigating the feasibility of migrating old AngularJs pages to ReactJs. Building pages and components to address performance issues in the app, catering to a large user base using ReactJs with Nx  Monorepo). Work with Jira, Mantine, Nx Workspace, ReactJs',
-      achievements: 'Not specified',
-      technologies_used: [
-        'ReactJs',
-        'AngularJs',
-        'Nx',
-        'Mantine',
-        'Jira',
-        'React Query',
-        'TanStack Virtual',
-        'Zustand',
-        'Vite',
-        'Playwright',
-        'Jest',
-        'Remix',
-        'Tailwind CSS',
+      "company": "Your.rentals",
+      "position": "FRONTEND ENGINEER",
+      "start_date": "2023-05",
+      "end_date": "Present",
+      "duration_months": 24,
+      "responsibilities": "Collaborated with Product, PO, and Design teams on UX enhancements; Re-architected calendar views; Integrated React into legacy AngularJS; Established shared component library and test suites; Maintained React Native app; Conducted technical interviews.",
+      "achievements": "Boosted signup-to-first-booking conversion rate from 13% to 56%. Increased manageable property scope in calendar from ~1k/1yr to >100k/3yrs. Achieved 85% test coverage.",
+      "technologies_used": [
+        "React",
+        "React Query",
+        "TanStack Virtual",
+        "Mantine UI",
+        "Nx",
+        "Zustand",
+        "Vite",
+        "Playwright",
+        "Jest",
+        "Jira",
+        "React Native",
+        "AngularJS"
       ],
+      "location": "Skane, Malmö"
     },
     {
-      company: 'VMO Holding',
-      position: 'FRONT END DEVELOPER',
-      start_date: '2021-12',
-      end_date: '2023-04',
-      duration_months: 16,
-      responsibilities:
-        'Build web applications  ReactJs). Work with SignalR, Azure DevOps, Antd',
-      achievements: 'Not specified',
-      technologies_used: [
-        'ReactJs',
-        'SignalR',
-        'Azure DevOps',
-        'Ant Design',
-        'MobX-React',
-        'PlotlyJS',
-        'TanStack Virtual',
+      "company": "VMO Holding",
+      "position": "FRONTEND DEVELOPER - TEAM LEADER",
+      "start_date": "2021-12",
+      "end_date": "2023-04",
+      "duration_months": 17,
+      "responsibilities": "Led a team of 6 developers for an IoT/ML analytics platform (ASSET-ANALYTIC); Designed and implemented dashboard features for large datasets and ML workflows; Optimized chart loading; Co-developed a workflow automation tool; Mentored interns; Provided technical consultation for optimizing charts/tables (ASSET-MANAGEMENT); Developed real-time monitoring features.",
+      "achievements": "Reduced workflow setup time by an estimated 50%. Significantly improved large chart loading performance via .txt download. Mentored and trained 10 interns.",
+      "technologies_used": [
+        "React",
+        "SignalR",
+        "Plotly.js",
+        "MobX-React",
+        "Ant Design",
+        "Azure DevOps",
+        "JavaScript",
+        "TypeScript"
       ],
+      "location": "Hanoi, Vietnam"
     },
     {
-      company: 'BRIGHT SOFTWARE SOLUTION',
-      position: 'FULL STACK DEVELOPER',
-      start_date: '2020-05',
-      end_date: '2021-12',
-      duration_months: 19,
-      responsibilities:
-        'Build mobile, and web applications  ReactJs). Build API Services  PHP, .NET Core). Work with Firebase, AWS, Agolia search, Mongo Atlas.',
-      achievements: 'Not specified',
-      technologies_used: [
-        'ReactJs',
-        'PHP',
-        '.NET Core',
-        'Firebase',
-        'AWS',
-        'Algolia',
-        'MongoDB',
-        'NodeJs',
-        'ExpressJs',
-        'Laravel',
-        'WordPress',
-        'Block Lab',
-        'Elasticsearch',
-        'MySQL',
-        'MSSQL',
+      "company": "Bright Software Solution",
+      "position": "FULL-STACK DEVELOPER",
+      "start_date": "2020-05",
+      "end_date": "2021-12",
+      "duration_months": 20,
+      "responsibilities": "Gained foundational full-stack experience using ReactJS alongside backend services. Built core portal modules and APIs for a School Management System (MARIO). Developed backend services, integrated search, and implemented user auth/multi-language for a Movie Info App (nJoyShow). Created custom WordPress blocks/modules syncing with a Laravel API for a Business News Site (PUBLIC INSIGHT).",
+      "achievements": "Delivered key modules for multiple applications across different domains.",
+      "technologies_used": [
+        "React",
+        "PHP",
+        ".NET Core",
+        "Node.js",
+        "Express.js",
+        "Laravel",
+        "WordPress",
+        "Elasticsearch",
+        "MSSQL",
+        "MongoDB",
+        "Algolia Search",
+        "Firebase",
+        "AWS",
+        "REST APIs",
+        "JavaScript"
       ],
-    },
+      "location": "Hanoi, Vietnam"
+    }
   ],
-  projects: [
+  "projects": [
     {
-      name: 'The simplest SaaS for short-term rental accommodation owners and managers is to save time and grow their business',
-      description:
-        'Building pages and components to address performance issues in the app, catering to a large user base using ReactJs with Nx  Monorepo)',
-      start_date: '2023-05',
-      end_date: 'Present',
-      duration_months: 12,
-      role: 'Front End Developer',
-      skills: {
-        technical: {
-          programming_languages: ['JavaScript'],
-          frameworks: ['ReactJs', 'AngularJs'],
-          libraries: ['Mantine', 'React Query', 'TanStack Virtual', 'Zustand'],
-          databases: [],
-          tools: ['Nx', 'Vite', 'Playwright', 'Jest', 'Jira'],
-          methodologies: [],
-        },
-        soft: [],
-      },
-      functionalities:
-        'Building a house listing page to display millions of records, Building a multi-calendar and single-calendar page to display houses and bookings for each house simultaneously at the correct time, Build and customize a shared component library for the app, Writing automation test with playwright, unit test with Jest',
-      team_size: '20',
-      roles_involved: ['Not specified'],
-      purpose: 'Not specified',
-      customer_location: 'Not specified',
-      status: 'In Progress',
-      challenges: 'Not specified',
-      outcomes: 'Not specified',
-      metadata: ['Review code and training'],
-    },
-    {
-      name: 'Website building platform for guests',
-      description:
-        'Developing a website that allows users to set up their booking page with customizations such as logo, colors, page layout, etc.',
-      start_date: '2023-05',
-      end_date: 'Present',
-      duration_months: 12,
-      role: 'Front End Developer',
-      skills: {
-        technical: {
-          programming_languages: ['JavaScript'],
-          frameworks: ['Remix'],
-          libraries: ['Tailwind CSS'],
-          databases: ['DynamoDB'],
-          tools: ['Vite'],
-          methodologies: [],
-        },
-        soft: [],
-      },
-      functionalities:
-        'Retrieve website configuration data from DynamoDB regarding colors, layout, content, etc., and store it in a global variable, Build and customize a shared component library for the app with the tailwind',
-      team_size: '3',
-      roles_involved: ['Not specified'],
-      purpose: 'Not specified',
-      customer_location: 'Not specified',
-      status: 'In Progress',
-      challenges: 'Not specified',
-      outcomes: 'Not specified',
-      metadata: ['Review code and training'],
-    },
-    {
-      name: 'ASSET MANAGEMENT  Devices metric management)',
-      description:
-        'Building modules and features to receive data, display data, process data from IoT or machine learning systems, forward data to other systems',
-      start_date: '2021-12',
-      end_date: '2022-03',
-      duration_months: 3,
-      role: 'Front End Developer',
-      skills: {
-        technical: {
-          programming_languages: ['JavaScript'],
-          frameworks: ['ReactJs'],
-          libraries: ['MobX-React', 'Ant Design'],
-          databases: [],
-          tools: ['SignalR'],
-          methodologies: [],
-        },
-        soft: [],
-      },
-      functionalities:
-        'Real-time parameter update and message handling with signalR, Hide and show functions depending on permissions, Display and manage sensors in a device using a tree model, allowing actions to be performed on the sensors.',
-      team_size: '5',
-      roles_involved: ['Not specified'],
-      purpose: 'Not specified',
-      customer_location: 'Not specified',
-      status: 'Completed',
-      challenges: 'Not specified',
-      outcomes: 'Not specified',
-      metadata: [],
-    },
-    {
-      name: 'ASSET ANALYTIC  Machine Learning System)',
-      description:
-        'Building modules and features for machine learning systems about IoT parameters of industrial equipment',
-      start_date: '2022-03',
-      end_date: '2023-04',
-      duration_months: 13,
-      role: 'Team leader',
-      skills: {
-        technical: {
-          programming_languages: ['JavaScript'],
-          frameworks: ['ReactJs'],
-          libraries: [
-            'PlotlyJS',
-            'MobX-React',
-            'Ant Design',
-            'TanStack Virtual',
+      "name": "Your.rentals Platform Enhancements",
+      "description": "Enhancing the core platform for property rentals, focusing on UX, performance, and modernization.",
+      "start_date": "2023-05",
+      "end_date": "Present",
+      "duration_months": 24,
+      "role": "Frontend Engineer",
+      "skills": {
+        "technical": {
+          "programming_languages": [
+            "JavaScript",
+            "TypeScript"
           ],
-          databases: [],
-          tools: ['SignalR'],
-          methodologies: [],
+          "frameworks": [
+            "AngularJS"
+          ],
+          "libraries": [
+            "React",
+            "React Query",
+            "TanStack Virtual",
+            "Mantine UI",
+            "Zustand",
+            "React Native"
+          ],
+          "databases": [],
+          "tools": [
+            "Nx",
+            "Vite",
+            "Playwright",
+            "Jest",
+            "Jira",
+            "Git"
+          ],
+          "methodologies": [
+            "Agile",
+            "Performance Optimization",
+            "UI/UX Principles",
+            "Monorepo"
+          ]
         },
-        soft: [],
+        "soft": [
+          "Collaboration",
+          "Technical Interviewing"
+        ]
       },
-      functionalities:
-        'Real-time parameter update and message handling with signalR, Hide and show functions depending on permissions, View chart with PlotlyJS, Building high-performance data grids for visualizing massive sensor data sets with millions of records, Developing a visual workflow builder for word-follow training, empowering users to effortlessly create and customize training workflows by dragging and connecting process steps., Providing real-time, interactive visualizations of the build, training, and prediction processes using SignalR.',
-      team_size: '6',
-      roles_involved: ['Not specified'],
-      purpose: 'Not specified',
-      customer_location: 'Not specified',
-      status: 'Completed',
-      challenges: 'Not specified',
-      outcomes: 'Not specified',
-      metadata: [
-        'Divide work among team members, report work progress to PM and PO',
-        'Train interns in software development skills',
+      "functionalities": "UX Enhancements (Signup/Booking flow), Scalable Calendar Views (Multi/Single), React component integration into AngularJS, Shared Component Library, Test Suites, React Native App Maintenance",
+      "team_size": "Not specified (mentions Product, PO, Design teams)",
+      "roles_involved": [
+        "Frontend Engineer",
+        "Product Manager",
+        "Product Owner",
+        "Designer"
       ],
+      "purpose": "Improve user experience, conversion rates, platform performance, and development efficiency for a property rental platform.",
+      "customer_location": "Skane, Malmö (implied)",
+      "status": "In Progress",
+      "challenges": "Integrating modern React components into a legacy AngularJS application, Scaling calendar views for a large number of properties.",
+      "outcomes": "Signup-to-first-booking conversion rate increased from 13% to 56%. Calendar performance significantly improved to handle >100k properties over 3 years. Established robust development practices (Monorepo, testing).",
+      "metadata": [
+        "Associated with Your.rentals work experience."
+      ]
     },
     {
-      name: 'MARIO  School management)',
-      description:
-        'Create/Update module on Admin dashboard, Teacher, Parents & Student page, Build API Services',
-      start_date: '2020-05',
-      end_date: '2021-05',
-      duration_months: 12,
-      role: 'Full Stack Developer',
-      skills: {
-        technical: {
-          programming_languages: ['JavaScript', 'C#'],
-          frameworks: ['ReactJs', '.NET Core'],
-          libraries: [],
-          databases: ['Elasticsearch', 'MSSQL'],
-          tools: [],
-          methodologies: [],
+      "name": "ASSET-ANALYTIC (Machine Learning System)",
+      "description": "Platform for data experts to visualize IoT datasets, manage ML model training workflows, and perform analytics.",
+      "start_date": "2021-12",
+      "end_date": "2023-01",
+      "duration_months": 13,
+      "role": "Team Leader (Frontend)",
+      "skills": {
+        "technical": {
+          "programming_languages": [
+            "JavaScript",
+            "TypeScript"
+          ],
+          "frameworks": [],
+          "libraries": [
+            "React",
+            "Plotly.js",
+            "MobX-React",
+            "Ant Design"
+          ],
+          "databases": [],
+          "tools": [
+            "Azure DevOps",
+            "Git",
+            "Jira"
+          ],
+          "methodologies": [
+            "Agile",
+            "Performance Optimization"
+          ]
         },
-        soft: [],
+        "soft": [
+          "Team Leadership",
+          "Mentorship",
+          "Communication",
+          "Task Management",
+          "Progress Reporting"
+        ]
       },
-      functionalities:
-        'Manage users, user roles, and modules the user can access, Manage teacher, student, classes, and session, Teacher and Student data collection',
-      team_size: '8',
-      roles_involved: ['Not specified'],
-      purpose: 'Not specified',
-      customer_location: 'Not specified',
-      status: 'Completed',
-      challenges: 'Not specified',
-      outcomes: 'Not specified',
-      metadata: ['Train interns in software development skills'],
+      "functionalities": "Dashboard for massive IoT data visualization (tables, charts, heatmaps), ML model training workflow management, Drag-and-drop workflow builder (ingest -> normalize -> predict -> notify) with real-time validation, Large dataset download (.txt).",
+      "team_size": "7 (1 Team Lead + 6 Developers)",
+      "roles_involved": [
+        "Frontend Developer",
+        "Team Leader",
+        "PM/PO"
+      ],
+      "purpose": "To build an analytics platform for IoT/Machine Learning data experts.",
+      "customer_location": "Hanoi, Vietnam (implied)",
+      "status": "Completed",
+      "challenges": "Handling visualization of massive datasets (millions of rows), API timeouts with large data transfers, Designing an intuitive workflow builder.",
+      "outcomes": "Successfully delivered the platform. Reduced workflow setup time by 50%. Improved chart loading performance and reliability.",
+      "metadata": [
+        "Associated with VMO Holding work experience."
+      ]
     },
     {
-      name: 'nJoyShow  Web-App Search movie information)',
-      description:
-        "Create/Update modules on the Admin dashboard, Build API Services, upload data on Agolia and MongoDB, Crawl film data, the film's showtime on Cinema's website",
-      start_date: '2021-05',
-      end_date: '2021-09',
-      duration_months: 4,
-      role: 'Full Stack Developer',
-      skills: {
-        technical: {
-          programming_languages: ['JavaScript'],
-          frameworks: ['ReactJs', 'NodeJs', 'ExpressJs'],
-          libraries: [],
-          databases: ['MongoDB'],
-          tools: ['Algolia'],
-          methodologies: [],
+      "name": "ASSET-MANAGEMENT (Device Metric Management)",
+      "description": "System focused on displaying and monitoring device metrics, requiring performance optimization for charts and tables.",
+      "start_date": "2023-02",
+      "end_date": "2023-04",
+      "duration_months": 3,
+      "role": "Frontend Developer / Performance Consultant",
+      "skills": {
+        "technical": {
+          "programming_languages": [
+            "JavaScript",
+            "TypeScript"
+          ],
+          "frameworks": [],
+          "libraries": [
+            "React",
+            "SignalR",
+            "Plotly.js",
+            "MobX-React",
+            "Ant Design"
+          ],
+          "databases": [],
+          "tools": [
+            "Azure DevOps",
+            "Git",
+            "Jira"
+          ],
+          "methodologies": [
+            "Performance Optimization"
+          ]
         },
-        soft: [],
+        "soft": [
+          "Technical Consulting"
+        ]
       },
-      functionalities:
-        'Manage users, Film information, showtime cinema, User login with Google, Facebook, Kakao Talk, Search film information with Agolia, Multilingual by geographical location, Setup service worker',
-      team_size: '2',
-      roles_involved: ['Not specified'],
-      purpose: 'Not specified',
-      customer_location: 'Not specified',
-      status: 'Completed',
-      challenges: 'Not specified',
-      outcomes: 'Not specified',
-      metadata: [],
+      "functionalities": "Real-time device monitoring using SignalR, Permission-based UI controls, Optimized charts and tables for large datasets.",
+      "team_size": "Not specified",
+      "roles_involved": [
+        "Frontend Developer"
+      ],
+      "purpose": "To provide a performant interface for monitoring device metrics in real-time.",
+      "customer_location": "Hanoi, Vietnam (implied)",
+      "status": "Completed",
+      "challenges": "Optimizing performance of charts and tables displaying large datasets.",
+      "outcomes": "Provided solutions for performance optimization. Contributed features for real-time monitoring and UI controls.",
+      "metadata": [
+        "Associated with VMO Holding work experience."
+      ]
     },
     {
-      name: 'PUBLIC INSIGHT  Business News website)',
-      description:
-        'Create API sync data between Laravel and WordPress, Create/Update modules on the Admin dashboard and User page, Create/Update posts, dynamic content block in page in WordPress',
-      start_date: '2021-07',
-      end_date: '2021-12',
-      duration_months: 5,
-      role: 'Full Stack Developer',
-      skills: {
-        technical: {
-          programming_languages: [],
-          frameworks: ['Laravel', 'WordPress'],
-          libraries: ['Block Lab'],
-          databases: ['Elasticsearch', 'MySQL'],
-          tools: [],
-          methodologies: [],
+      "name": "MARIO (School Management System)",
+      "description": "A system for managing school operations with portals for different user types.",
+      "start_date": "2020-12",
+      "end_date": "2021-12",
+      "duration_months": 12,
+      "role": "Full-Stack Developer",
+      "skills": {
+        "technical": {
+          "programming_languages": [
+            "JavaScript",
+            "C#"
+          ],
+          "frameworks": [
+            ".NET Core"
+          ],
+          "libraries": [
+            "React"
+          ],
+          "databases": [
+            "MSSQL"
+          ],
+          "tools": [
+            "Git",
+            "REST APIs"
+          ],
+          "methodologies": []
         },
-        soft: [],
+        "soft": []
       },
-      functionalities:
-        'Manage users and user roles with Laravel, Manage posts, authors, pages, SEO, Manage company profile, company employees',
-      team_size: '5',
-      roles_involved: ['Not specified'],
-      purpose: 'Not specified',
-      customer_location: 'Not specified',
-      status: 'Completed',
-      challenges: 'Not specified',
-      outcomes: 'Not specified',
-      metadata: [],
+      "functionalities": "Core portal modules (Admin, Teacher, Parent, Student), Backend APIs.",
+      "team_size": "Not specified",
+      "roles_involved": [
+        "Full-Stack Developer"
+      ],
+      "purpose": "To create a comprehensive school management system.",
+      "customer_location": "Hanoi, Vietnam (implied)",
+      "status": "Completed",
+      "challenges": "Not specified",
+      "outcomes": "Delivered core modules for the system.",
+      "metadata": [
+        "Associated with Bright Software Solution work experience."
+      ]
     },
+    {
+      "name": "nJoyShow (Movie Information App)",
+      "description": "An application providing movie information, user authentication, and multi-language support.",
+      "start_date": "2020-08",
+      "end_date": "2020-12",
+      "duration_months": 4,
+      "role": "Full-Stack Developer",
+      "skills": {
+        "technical": {
+          "programming_languages": [
+            "JavaScript"
+          ],
+          "frameworks": [
+            "Node.js",
+            "Express.js"
+          ],
+          "libraries": [
+            "React"
+          ],
+          "databases": [
+            "MongoDB"
+          ],
+          "tools": [
+            "Algolia Search",
+            "Firebase",
+            "Git",
+            "REST APIs"
+          ],
+          "methodologies": []
+        },
+        "soft": []
+      },
+      "functionalities": "Backend services, User authentication, Multi-language features, Search integration.",
+      "team_size": "Not specified",
+      "roles_involved": [
+        "Full-Stack Developer"
+      ],
+      "purpose": "To create a movie information application.",
+      "customer_location": "Hanoi, Vietnam (implied)",
+      "status": "Completed",
+      "challenges": "Not specified",
+      "outcomes": "Developed backend services and key user-facing features.",
+      "metadata": [
+        "Associated with Bright Software Solution work experience."
+      ]
+    },
+    {
+      "name": "PUBLIC INSIGHT (Business News Site)",
+      "description": "A business news website with custom WordPress elements synced with a backend API.",
+      "start_date": "2020-05",
+      "end_date": "2020-10",
+      "duration_months": 5,
+      "role": "Full-Stack Developer",
+      "skills": {
+        "technical": {
+          "programming_languages": [
+            "JavaScript",
+            "PHP"
+          ],
+          "frameworks": [
+            "Laravel",
+            "WordPress"
+          ],
+          "libraries": [
+            "React"
+          ],
+          "databases": [],
+          "tools": [
+            "Git",
+            "REST APIs",
+            "AWS"
+          ],
+          "methodologies": []
+        },
+        "soft": []
+      },
+      "functionalities": "Custom WordPress blocks, Custom WordPress admin modules, Data synchronization with Laravel backend API.",
+      "team_size": "Not specified",
+      "roles_involved": [
+        "Full-Stack Developer"
+      ],
+      "purpose": "To build a business news site with custom WordPress features.",
+      "customer_location": "Hanoi, Vietnam (implied)",
+      "status": "Completed",
+      "challenges": "Not specified",
+      "outcomes": "Created custom WordPress components and data synchronization.",
+      "metadata": [
+        "Associated with Bright Software Solution work experience."
+      ]
+    },
+    {
+      "name": "SnapOG - Dynamic Open Graph Image Generator",
+      "description": "A Micro-SaaS application allowing users to generate dynamic Open Graph images for their websites automatically based on URL parameters.",
+      "start_date": "2024-07",
+      "end_date": "Present",
+      "duration_months": 10,
+      "role": "Software Engineer",
+      "skills": {
+        "technical": {
+          "programming_languages": [
+            "JavaScript",
+            "TypeScript"
+          ],
+          "frameworks": [
+            "Next.js",
+            "Node.js"
+          ],
+          "libraries": [
+            "React",
+            "Shadcn UI"
+          ],
+          "databases": [
+            "PostgreSQL"
+          ],
+          "tools": [
+            "Prisma",
+            "Playwright",
+            "AWS EC2",
+            "AWS S3",
+            "AWS CloudFront",
+            "Vercel",
+            "Polar.sh",
+            "Git"
+          ],
+          "methodologies": [
+            "Micro-SaaS"
+          ]
+        },
+        "soft": []
+      },
+      "functionalities": "Dynamic Open Graph image generation based on URL parameters, Frontend UI, API routes, Data management, Image generation logic via Playwright on a service worker, Image storage and CDN delivery, Potential monetization integration.",
+      "team_size": "1",
+      "roles_involved": [
+        "Software Engineer"
+      ],
+      "purpose": "To provide a service for automatically generating dynamic Open Graph images.",
+      "customer_location": "Global (Web Application)",
+      "status": "In Progress",
+      "challenges": "Implementing reliable image generation using Playwright in a service worker, Architecting a scalable Micro-SaaS.",
+      "outcomes": "Developed and deployed the application on Vercel with AWS infrastructure for image processing and delivery.",
+      "metadata": [
+        "Personal Project",
+        "Website: snapog.com"
+      ]
+    }
   ],
-  skills: {
-    technical: {
-      programming_languages: ['JavaScript', 'C#', 'PHP'],
-      frameworks: [
-        'ReactJs',
-        'AngularJs',
-        'Remix',
-        '.NET Core',
-        'NodeJs',
-        'ExpressJs',
-        'Laravel',
-        'WordPress',
+  "skills": {
+    "technical": {
+      "programming_languages": [
+        "JavaScript",
+        "TypeScript",
+        "PHP",
+        "C#"
       ],
-      libraries: [
-        'Mantine',
-        'React Query',
-        'TanStack Virtual',
-        'Zustand',
-        'Tailwind CSS',
-        'MobX-React',
-        'Ant Design',
-        'PlotlyJS',
-        'Block Lab',
+      "frameworks": [
+        "React",
+        "Next.js",
+        "AngularJS",
+        "Remix",
+        "Node.js",
+        "Express.js",
+        ".NET Core",
+        "Laravel",
+        "WordPress"
       ],
-      databases: ['DynamoDB', 'Elasticsearch', 'MSSQL', 'MongoDB', 'MySQL'],
-      tools: [
-        'Nx',
-        'Vite',
-        'Playwright',
-        'Jest',
-        'Jira',
-        'SignalR',
-        'Algolia',
-        'Azure DevOps',
-        'Firebase',
-        'AWS',
+      "libraries": [
+        "Mantine UI",
+        "Ant Design",
+        "Zustand",
+        "MobX-React",
+        "TanStack Query",
+        "TanStack Virtual",
+        "Plotly.js",
+        "SignalR",
+        "Shadcn UI",
+        "Tailwind CSS"
       ],
-      methodologies: [],
+      "databases": [
+        "PostgreSQL",
+        "MongoDB",
+        "MySQL",
+        "DynamoDB",
+        "Elasticsearch",
+        "MSSQL",
+        "Prisma"
+      ],
+      "tools": [
+        "Playwright",
+        "Jest",
+        "AWS S3",
+        "AWS CloudFront",
+        "AWS EC2",
+        "Azure DevOps",
+        "Vercel",
+        "Firebase",
+        "Docker",
+        "Git",
+        "Jira",
+        "Nx",
+        "Vite",
+        "REST APIs",
+        "Algolia Search",
+        "Polar.sh"
+      ],
+      "methodologies": [
+        "Monorepo",
+        "Performance Optimization",
+        "UI/UX Principles",
+        "Agile",
+        "Micro-SaaS"
+      ]
     },
-    soft: [],
+    "soft": [
+      "Team Leadership",
+      "Mentorship",
+      "Collaboration",
+      "Communication",
+      "Technical Interviewing"
+    ]
   },
-  certifications: [
+  "certifications": [
     {
-      name: 'Professional Developer on Open Source PHP',
-      organization: 'BachKhoa aptech',
-      date: '2020',
-      expiration: 'Not specified',
-      credential_id: 'Not specified',
-    },
-  ],
-  volunteer_work: [],
-  publications: [],
-  professional_affiliations: [],
-  awards: [
-    {
-      name: 'BKAP Code War',
-      description: 'The second prize',
-      year: '2020',
-      organization: 'Not specified',
+      "name": "The Degree of engineer in Electrical Engineering",
+      "organization": "HANOI UNIVERSITY OF SCIENCE AND TECHNOLOGY",
+      "date": "2021-11",
+      "expiration": "Not specified",
+      "credential_id": "Not specified"
     },
     {
-      name: 'Violympic math competition for grade 9',
-      description: 'National bronze medal',
-      year: '2012',
-      organization: 'Not specified',
-    },
+      "name": "Professional Developer on Open Source PHP",
+      "organization": "BachKhoa Aptech",
+      "date": "2020-11",
+      "expiration": "Not specified",
+      "credential_id": "Not specified"
+    }
   ],
-  languages: [
+  "volunteer_work": [],
+  "publications": [],
+  "professional_affiliations": [],
+  "awards": [
     {
-      language: 'English',
-      proficiency: 'Reading and writing: Good, Speaking and listening: Basic',
+      "name": "BKAP Code War 2020 - Second Prize",
+      "description": "Second Prize in a coding competition.",
+      "year": "2020",
+      "organization": "BKAP (presumably BachKhoa Aptech)"
     },
+    {
+      "name": "Violympic Math Competition for Grade 9 (2012) - National Bronze Medal",
+      "description": "National Bronze Medal in a mathematics competition.",
+      "year": "2012",
+      "organization": "Violympic"
+    }
   ],
-  interests: [],
-  job_keywords: [
-    'Front-end Developer',
-    'ReactJs',
-    'AngularJs',
-    'Nx',
-    'Mantine',
-    'Jira',
-    'React Query',
-    'TanStack Virtual',
-    'Zustand',
-    'Vite',
-    'Playwright',
-    'Jest',
-    'Remix',
-    'Tailwind CSS',
-    'SignalR',
-    'Azure DevOps',
-    'Ant Design',
-    'MobX-React',
-    'PlotlyJS',
-    'Full Stack Developer',
-    '.NET Core',
-    'Firebase',
-    'AWS',
-    'Algolia',
-    'MongoDB',
-    'NodeJs',
-    'ExpressJs',
-    'Laravel',
-    'WordPress',
-    'Block Lab',
-    'Elasticsearch',
-    'MySQL',
-    'MSSQL',
-    'Machine Learning',
-    'IoT',
+  "languages": [
+    {
+      "language": "Vietnamese",
+      "proficiency": "Native"
+    },
+    {
+      "language": "English",
+      "proficiency": "Good Reading/Writing, Intermediate Speaking/Listening"
+    }
   ],
-};
+  "interests": [
+    "Performance Optimization",
+    "UI/UX",
+    "AI applications",
+    "Micro-SaaS development"
+  ],
+  "job_keywords": [
+    "Frontend Developer",
+    "React",
+    "Next.js",
+    "JavaScript",
+    "TypeScript",
+    "Performance Optimization",
+    "UI/UX",
+    "Scalable Web Applications",
+    "Agile",
+    "Monorepo",
+    "Team Leader",
+    "Full-Stack Developer",
+    "AWS",
+    "Node.js",
+    "REST APIs",
+    "Testing",
+    "Playwright",
+    "Jest",
+    "CI/CD",
+    "Micro-SaaS",
+    "Component Library",
+    "Legacy Modernization",
+    "AngularJS",
+    "TanStack Query",
+    "Mantine UI",
+    "Ant Design",
+    "Data Visualization",
+    "Plotly.js",
+    "SignalR",
+    "Cloud",
+    "DevOps"
+  ]
+}

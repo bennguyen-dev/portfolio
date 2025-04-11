@@ -5,6 +5,7 @@ export interface PersonalDetails {
     phone: string;
     linkedin: string;
     other: string;
+    location?: string;
   };
 }
 
@@ -15,6 +16,7 @@ export interface Education {
   end_date: string;
   field: string;
   grades: string;
+  location?: string;
 }
 
 export interface Experience {
@@ -26,6 +28,7 @@ export interface Experience {
   responsibilities: string;
   achievements: string;
   technologies_used: string[];
+  location?: string;
 }
 
 export interface Skills {
