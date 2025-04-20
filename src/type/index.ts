@@ -68,6 +68,7 @@ export interface Projects {
   challenges: string;
   outcomes: string;
   metadata: string[];
+  link?: string;
 }
 
 export interface CVData {

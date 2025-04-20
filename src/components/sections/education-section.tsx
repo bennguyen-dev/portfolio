@@ -1,6 +1,7 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { CV } from '@/data/cv';
 import { GraduationCap, Award, Medal, Calendar } from 'lucide-react';
+import { MagicCard } from '../ui/magic-card';
 
 const EducationCard = ({
   education,
@@ -11,28 +12,30 @@ const EducationCard = ({
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
-    className="bg-white dark:bg-neutral-800 rounded-xl p-6 shadow-lg"
+    className="w-full"
   >
-    <div className="flex items-start gap-4">
-      <div className="p-3 bg-primary/10 rounded-lg">
-        <GraduationCap className="w-6 h-6 text-primary" />
-      </div>
-      <div className="flex-1">
-        <h3 className="text-xl font-bold">{education.institution}</h3>
-        <p className="text-primary font-medium mt-1">{education.degree}</p>
-        <div className="flex items-center gap-2 text-gray-500 dark:text-gray-400 mt-2">
-          <Calendar className="w-4 h-4" />
-          <span>
-            {education.start_date} - {education.end_date}
-          </span>
+    <MagicCard className="p-6">
+      <div className="flex items-start gap-4">
+        <div className="p-3 bg-primary/10 rounded-lg">
+          <GraduationCap className="w-6 h-6 text-primary" />
         </div>
-        <p className="text-gray-600 dark:text-gray-300 mt-4">
-          Studied electrical engineering with a focus on control systems and
-          automation. Developed strong analytical and problem-solving skills
-          that have been valuable in my software development career.
-        </p>
+        <div className="flex-1">
+          <h3 className="text-xl font-bold">{education.institution}</h3>
+          <p className="text-primary font-medium mt-1">{education.degree}</p>
+          <div className="flex items-center gap-2 text-gray-500 dark:text-gray-400 mt-2">
+            <Calendar className="w-4 h-4" />
+            <span>
+              {education.start_date} - {education.end_date}
+            </span>
+          </div>
+          <p className="text-gray-600 dark:text-gray-300 mt-4">
+            Studied electrical engineering with a focus on control systems and
+            automation. Developed strong analytical and problem-solving skills
+            that have been valuable in my software development career.
+          </p>
+        </div>
       </div>
-    </div>
+    </MagicCard>
   </motion.div>
 );
 
@@ -45,27 +48,29 @@ const CertificationCard = ({
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
-    className="bg-white dark:bg-neutral-800 rounded-xl p-6 shadow-lg"
+    className="w-full"
   >
-    <div className="flex items-start gap-4">
-      <div className="p-3 bg-primary/10 rounded-lg">
-        <Award className="w-6 h-6 text-primary" />
-      </div>
-      <div className="flex-1">
-        <h3 className="text-xl font-bold">{certification.name}</h3>
-        <p className="text-primary font-medium mt-1">
-          {certification.organization}
-        </p>
-        <div className="flex items-center gap-2 text-gray-500 dark:text-gray-400 mt-2">
-          <Calendar className="w-4 h-4" />
-          <span>{certification.date}</span>
+    <MagicCard className="p-6">
+      <div className="flex items-start gap-4">
+        <div className="p-3 bg-primary/10 rounded-lg">
+          <Award className="w-6 h-6 text-primary" />
         </div>
-        <p className="text-gray-600 dark:text-gray-300 mt-4">
-          Certification covering PHP frameworks, database design, and web
-          application development.
-        </p>
+        <div className="flex-1">
+          <h3 className="text-xl font-bold">{certification.name}</h3>
+          <p className="text-primary font-medium mt-1">
+            {certification.organization}
+          </p>
+          <div className="flex items-center gap-2 text-gray-500 dark:text-gray-400 mt-2">
+            <Calendar className="w-4 h-4" />
+            <span>{certification.date}</span>
+          </div>
+          <p className="text-gray-600 dark:text-gray-300 mt-4">
+            Certification covering PHP frameworks, database design, and web
+            application development.
+          </p>
+        </div>
       </div>
-    </div>
+    </MagicCard>
   </motion.div>
 );
 
@@ -74,21 +79,23 @@ const AwardCard = ({ award }: { award: (typeof CV.awards)[0] }) => (
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
-    className="bg-white dark:bg-neutral-800 rounded-xl p-6 shadow-lg"
+    className="w-full"
   >
-    <div className="flex items-start gap-4">
-      <div className="p-3 bg-primary/10 rounded-lg">
-        <Medal className="w-6 h-6 text-primary" />
-      </div>
-      <div className="flex-1">
-        <h3 className="text-xl font-bold">{award.name}</h3>
-        <p className="text-primary font-medium mt-1">{award.description}</p>
-        <div className="flex items-center gap-2 text-gray-500 dark:text-gray-400 mt-2">
-          <Calendar className="w-4 h-4" />
-          <span>{award.year}</span>
+    <MagicCard className="p-6">
+      <div className="flex items-start gap-4">
+        <div className="p-3 bg-primary/10 rounded-lg">
+          <Medal className="w-6 h-6 text-primary" />
+        </div>
+        <div className="flex-1">
+          <h3 className="text-xl font-bold">{award.name}</h3>
+          <p className="text-primary font-medium mt-1">{award.description}</p>
+          <div className="flex items-center gap-2 text-gray-500 dark:text-gray-400 mt-2">
+            <Calendar className="w-4 h-4" />
+            <span>{award.year}</span>
+          </div>
         </div>
       </div>
-    </div>
+    </MagicCard>
   </motion.div>
 );
 

@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { Target, BrainCircuit, Users, SearchCode } from 'lucide-react';
+import { MagicCard } from '../ui/magic-card';
 
 const personalTraits = [
   {
@@ -91,7 +92,7 @@ export const AboutSection = () => {
             </div>
 
             {/* Right Column - Key Traits */}
-            <div className="bg-white dark:bg-neutral-800 rounded-2xl p-8 shadow-lg">
+            <MagicCard>
               <h3 className="text-xl font-bold mb-4">Key Strengths</h3>
               <div className="space-y-4">
                 {personalTraits.map((trait, index) => (
@@ -106,7 +107,7 @@ export const AboutSection = () => {
                   </div>
                 ))}
               </div>
-            </div>
+            </MagicCard>
           </div>
         </motion.div>
       </div>

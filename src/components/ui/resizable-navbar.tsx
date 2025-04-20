@@ -271,8 +271,8 @@ export const NavbarLogo = () => {
     >
       <img src="/favicon.svg" alt="logo" width={32} height={32} />
       <p className="font-black  mb-1 text-xl leading-0 text-black dark:text-white">
-        Linh{' '}
-        <span className="w-1.5 h-1.5 inline-block bg-red-700 dark:bg-red-500 rounded-full"></span>
+        Linh
+        <span className="w-1.5 h-1.5 ml-0.5 inline-block bg-red-700 dark:bg-red-500 rounded-full"></span>
       </p>
     </a>
   );

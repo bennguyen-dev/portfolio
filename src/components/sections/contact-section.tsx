@@ -1,31 +1,10 @@
 import React, { useState, type FormEvent, type ChangeEvent } from 'react';
 import { Mail, Phone, MapPin, Github, Linkedin } from 'lucide-react';
-
-// Define types for CV data
-interface ContactInfo {
-  email: string;
-  phone: string;
-  other: string;
-}
-
-interface PersonalDetails {
-  contact: ContactInfo;
-}
-
-interface CVData {
-  personal_details: PersonalDetails;
-}
-
-// This constant represents your CV data - replace with your actual data import
-const CV: CVData = {
-  personal_details: {
-    contact: {
-      email: 'leduylinh1998.nc@gmail.com',
-      phone: '0342 90 96 96',
-      other: 'Vietnam',
-    },
-  },
-};
+import { Button } from '../ui/button';
+import { MagicCard } from '../ui/magic-card';
+import { motion } from 'framer-motion';
+import { CV } from '@/data/cv';
+import emailjs from '@emailjs/browser';
 
 interface FormData {
   name: string;
@@ -47,6 +26,8 @@ export const ContactSection: React.FC = () => {
     null,
   );
 
+  const contact = CV.personal_details.contact;
+
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ): void => {
@@ -58,23 +39,34 @@ export const ContactSection: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    try {
-      // Replace with your actual API endpoint for form submission
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+    // Replace these with your actual EmailJS Service ID, Template ID, and Public Key
+    const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-      if (response.ok) {
+    console.log(SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY);
+    console.log(import.meta.env);
+
+    try {
+      const result = await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        PUBLIC_KEY,
+      );
+      if (result.status === 200) {
         setSubmitStatus('success');
         setFormData({ name: '', email: '', subject: '', message: '' });
       } else {
         setSubmitStatus('error');
       }
     } catch (error) {
+      console.error('Error sending email:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -84,14 +76,33 @@ export const ContactSection: React.FC = () => {
   return (
     <section id="contact" className="py-20 scroll-mt-12">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-6 text-center">Contact Me</h2>
-        <p className="text-center text-gray-600 dark:text-gray-300 mb-12">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-4xl font-bold mb-6 text-center"
+        >
+          Contact Me
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="text-center text-gray-600 dark:text-gray-300 mb-12"
+        >
           Let's discuss your project or just say hello
-        </p>
+        </motion.p>
 
         <div className="grid md:grid-cols-2 gap-10">
           {/* Left Column - Contact Info */}
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <h3 className="text-2xl font-bold mb-6">Get In Touch</h3>
             <p className="text-gray-600 dark:text-gray-300 mb-8">
               I'm always interested in hearing about new projects and
@@ -107,14 +118,13 @@ export const ContactSection: React.FC = () => {
                 <div>
                   <p className="font-medium">Email</p>
                   <a
-                    href={`mailto:${CV.personal_details.contact.email}`}
+                    href={`mailto:${contact.email}`}
                     className="text-blue-600 hover:underline"
                   >
-                    {CV.personal_details.contact.email}
+                    {contact.email}
                   </a>
                 </div>
               </div>
-
               <div className="flex items-center gap-4">
                 <div className="w-10 h-10 flex items-center justify-center bg-gray-100 dark:bg-gray-800 rounded-full">
                   <Phone size={20} />
@@ -122,21 +132,20 @@ export const ContactSection: React.FC = () => {
                 <div>
                   <p className="font-medium">Phone</p>
                   <a
-                    href={`tel:${CV.personal_details.contact.phone}`}
+                    href={`tel:${contact.phone}`}
                     className="text-blue-600 hover:underline"
                   >
-                    {CV.personal_details.contact.phone}
+                    {contact.phone}
                   </a>
                 </div>
               </div>
-
               <div className="flex items-center gap-4">
                 <div className="w-10 h-10 flex items-center justify-center bg-gray-100 dark:bg-gray-800 rounded-full">
                   <MapPin size={20} />
                 </div>
                 <div>
                   <p className="font-medium">Location</p>
-                  <p>{CV.personal_details.contact.other}</p>
+                  <p>{contact.location || contact.other}</p>
                 </div>
               </div>
             </div>
@@ -144,123 +153,132 @@ export const ContactSection: React.FC = () => {
             <div className="mt-10">
               <h4 className="text-xl font-bold mb-4">Connect</h4>
               <div className="flex space-x-4">
-                <a
-                  href="#"
-                  className="w-10 h-10 flex items-center justify-center bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-                >
-                  <Github size={20} />
-                </a>
-                <a
-                  href="#"
-                  className="w-10 h-10 flex items-center justify-center bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-                >
-                  <Linkedin size={20} />
-                </a>
+                {contact.other && (
+                  <a
+                    href={`https://${contact.other}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 flex items-center justify-center bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                  >
+                    <Github size={20} />
+                  </a>
+                )}
+                {contact.linkedin && (
+                  <a
+                    href={`https://${contact.linkedin}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 flex items-center justify-center bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                  >
+                    <Linkedin size={20} />
+                  </a>
+                )}
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Column - Contact Form */}
-          <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md">
-            <h3 className="text-2xl font-bold mb-6">Send a Message</h3>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block mb-2 text-sm font-medium"
-                >
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  placeholder="Your name"
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  required
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block mb-2 text-sm font-medium"
-                >
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="Your email address"
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  required
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="subject"
-                  className="block mb-2 text-sm font-medium"
-                >
-                  Subject
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  placeholder="What is this regarding?"
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  required
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block mb-2 text-sm font-medium"
-                >
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder="Your message"
-                  rows={5}
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  required
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-              >
-                {isSubmitting ? 'Sending...' : 'Send Message'}
-              </button>
-
-              {submitStatus === 'success' && (
-                <div className="p-4 bg-green-100 text-green-700 rounded-md">
-                  Your message has been sent successfully!
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <MagicCard className="p-8">
+              <h3 className="text-2xl font-bold mb-6">Send a Message</h3>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <label
+                    htmlFor="name"
+                    className="block mb-2 text-sm font-medium"
+                  >
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="Your name"
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    required
+                  />
                 </div>
-              )}
-
-              {submitStatus === 'error' && (
-                <div className="p-4 bg-red-100 text-red-700 rounded-md">
-                  There was an error sending your message. Please try again.
+                <div>
+                  <label
+                    htmlFor="email"
+                    className="block mb-2 text-sm font-medium"
+                  >
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="Your email address"
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    required
+                  />
                 </div>
-              )}
-            </form>
-          </div>
+                <div>
+                  <label
+                    htmlFor="subject"
+                    className="block mb-2 text-sm font-medium"
+                  >
+                    Subject
+                  </label>
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    placeholder="What is this regarding?"
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor="message"
+                    className="block mb-2 text-sm font-medium"
+                  >
+                    Message
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Your message"
+                    rows={5}
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    required
+                  ></textarea>
+                </div>
+                <Button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full"
+                >
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                </Button>
+                {submitStatus === 'success' && (
+                  <div className="p-4 bg-green-100 text-green-700 rounded-md">
+                    Your message has been sent successfully!
+                  </div>
+                )}
+                {submitStatus === 'error' && (
+                  <div className="p-4 bg-red-100 text-red-700 rounded-md">
+                    There was an error sending your message. Please try again.
+                  </div>
+                )}
+              </form>
+            </MagicCard>
+          </motion.div>
         </div>
       </div>
     </section>

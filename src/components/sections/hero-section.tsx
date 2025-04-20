@@ -50,7 +50,7 @@ export const HeroSection = () => {
 
               {/* Role with typing effect */}
               <motion.h2
-                className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-6"
+                className="text-xl md:text-2xl text-muted-foreground mb-6"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
@@ -63,7 +63,7 @@ export const HeroSection = () => {
 
               {/* Summary */}
               <motion.p
-                className="text-gray-600 dark:text-gray-300 leading-relaxed mb-8 max-w-xl"
+                className="text-muted-foreground leading-relaxed mb-8 max-w-xl"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.7 }}
@@ -80,14 +80,14 @@ export const HeroSection = () => {
               >
                 <a
                   href="#contact"
-                  className="group bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors flex items-center gap-2"
+                  className="group bg-primary text-primary-foreground px-6 py-3 rounded-lg shadow hover:bg-primary/90 transition-colors flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-primary/40"
                 >
                   Contact Me
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
                 <a
                   href="#projects"
-                  className="border border-primary text-primary px-6 py-3 rounded-lg hover:bg-primary/10 transition-colors"
+                  className="border border-primary text-primary px-6 py-3 rounded-lg hover:bg-primary/10 transition-colors focus:outline-none focus:ring-2 focus:ring-primary/40"
                 >
                   View Projects
                 </a>
@@ -120,10 +120,10 @@ export const HeroSection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 1 }}
-                className="absolute -top-4 -left-4 bg-white dark:bg-neutral-800 px-4 py-2 rounded-full shadow-lg"
+                className="absolute -top-4 -left-4 bg-card text-card-foreground px-4 py-2 rounded-full shadow-lg"
               >
                 <span className="text-primary font-medium">
-                  4+ Years Experience
+                  5+ Years Experience
                 </span>
               </motion.div>
 
@@ -131,7 +131,7 @@ export const HeroSection = () => {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 1.2 }}
-                className="absolute -bottom-4 -right-4 bg-white dark:bg-neutral-800 px-4 py-2 rounded-full shadow-lg"
+                className="absolute -bottom-4 -right-4 bg-card text-card-foreground px-4 py-2 rounded-full shadow-lg"
               >
                 <span className="text-primary font-medium">
                   React Specialist
