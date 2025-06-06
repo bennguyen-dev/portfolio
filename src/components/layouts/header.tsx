@@ -104,7 +104,7 @@ export function Header() {
           <ThemeToggle />
           <ShimmerButton
             onClick={() => {
-              window.open('/path-to-your-cv.pdf', '_blank');
+              window.open('/LE_DUY_LINH-Frontend_Engineer.pdf', '_blank');
             }}
           >
             <Download className="w-4 h-4 mr-2" />
